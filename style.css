@@ -89,7 +89,7 @@ header a, .container li a {
 
 .container .title .drop {
     position: absolute;
-    top: 87vh;
+    top: 85vh;
     border: 15px solid transparent;
     border-top-color: black;
     border-radius: 5px;
