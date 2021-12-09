@@ -71,7 +71,7 @@ header a, .container li a {
     justify-self: flex-start;
     align-self: flex-start;
     margin-left: 20px;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
 }
 
 .container .title li {
