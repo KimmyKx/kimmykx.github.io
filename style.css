@@ -1,0 +1,276 @@
+html { scroll-behavior: smooth;}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    appearance: none;
+    width: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 0 1px 0 black;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+header .list {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 500px;
+}
+
+header a, .container li a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container .title h1 {
+    margin: 0;
+    font-size: 4rem;
+    filter: blur(5px);
+    animation: blur 4s forwards;
+}
+
+@keyframes blur {
+    to {
+        filter: blur(0);
+    }
+}
+
+.container .title p {
+    margin: 0;
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-bottom: -20px;
+}
+
+.container .title li {
+    list-style: none;
+    font-size: 1.5rem;
+    margin-right: 7px;
+    color:grey;
+}
+
+.container .title ul {
+    display: flex;
+    margin-left: -10px;
+}
+
+
+.container .title .drop {
+    position: absolute;
+    top: 90vh;
+    border: 15px solid transparent;
+    border-top-color: black;
+    border-radius: 5px;
+    animation: drop 1s ease-in-out infinite alternate;
+}
+
+.container .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    scroll-margin-top: 50px;
+}
+
+.container .about .content {
+    width: 80vw;
+    max-width: 500px;
+    box-shadow: 0 0 5px 0 grey;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+.container .about .content h3{
+    margin: 0;
+}
+
+.container .about .content p {
+    text-align: justify;
+}
+
+.container .project {
+    text-align: center;
+    margin-bottom: 20px;
+    scroll-margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .project .content .tier {
+    box-shadow: 0 0 5px 0 grey;
+    padding: 10px;
+    position: relative;
+    width: 50vw;
+    max-width: 300px;
+    margin-bottom: 30px;
+    margin-left: -25vw;
+}
+
+.container .project .content .tier:nth-child(even){
+    margin-right: -25vw;
+    margin-left: 0;
+}
+
+
+.container .project .content .tier .logo {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 5px;
+    box-shadow: 0 -1px 5px 0 gray;
+    left: -20px;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.container .project .content .logo img {
+    border-radius: 50%;
+}
+
+.container .project .content .logo i {
+    position: relative;
+    font-size: 50px;
+}
+
+.container .project .content .tier:nth-child(2) .logo::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    transform: rotate(45deg) translate(0px, -20px);
+    z-index: 9;
+}
+
+.container .project .content .tier:nth-child(2) .logo::after {
+    content: '';
+    position: absolute;
+    border: 10px solid transparent;
+    border-top-color: white;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    z-index: 11;
+}
+
+.container .history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.container .history .content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 500px;
+}
+
+.container .history .content .dot {
+    background-color: blueviolet;
+    position: relative;
+    width: 5px;
+    height: 120px;
+    white-space: nowrap;
+}
+
+.container .history .content .dot span {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    color: gray;
+}
+
+.container .history .content .dot .inner {
+    white-space: normal;
+    flex-wrap: wrap;
+    width: 70vw;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 grey;
+    max-width: 500px;
+}
+
+.container .history .content .dot .inner::after {
+    content: '';
+    position: absolute;
+    border: 20px solid transparent;
+    border-bottom-color: white;
+    top: -40px;
+    left: 20px;
+}
+
+.container .history .content .dot .inner::before {
+    content: '';
+    position: absolute;
+    border: 22px solid transparent;
+    border-bottom-color: rgba(200, 200, 200, .7);
+    top: -44px;
+    left: 18px;
+}
+
+.container .history .content .dot::after {
+    content: '';
+    background-color: blueviolet;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -10px;
+    left: -7px
+}
+
+@keyframes drop {
+    from {
+       transform: translateY(0px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
