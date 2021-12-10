@@ -32,10 +32,17 @@ function shuffle() {
     setTimeout(shuffle, 100 + counter * 10);
 }
 
-const logo = document.querySelectorAll(".logo")
+const logo = document.querySelectorAll(".project .logo")
 for(let i = 0; i < logo.length; i++){
     if(i % 2 != 0){
         logo[i].style.right = "-20px"
         logo[i].style.left = "inherit"
     }
 }
+
+
+const icons = document.querySelectorAll(".skill i")
+icons.forEach(el => {
+    const colors = el.style.color
+    el.style.textShadow = `0 0 3px ${colors}`
+})

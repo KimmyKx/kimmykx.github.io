@@ -260,9 +260,7 @@ header a, .container li a {
 .container .history .content .right .dot {
     left: 100%;
     top: -3px;
-    height: 140px;
-    /* height: 140px; */
-    
+    min-height: 140px;
 }
 
 .container .history .content .right .inner {
@@ -348,6 +346,43 @@ header a, .container li a {
 .container .skill p {
     margin-bottom: 30px;
     color: grey;
+}
+
+.container .skill .content {
+    max-width: 500px;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.container .skill .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 gray;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.container .skill .logo i {
+    font-size: 50px;
+}
+
+.container .skill .logo span {
+    color: white;
+    margin-top: 10px;
+    padding: 3px 5px;
+    background-color: gray;
+    border-radius: 5px;
 }
 
 @keyframes drop {
