@@ -385,6 +385,11 @@ header a, .container li a {
     border-radius: 5px;
 }
 
+.container .skill .ignore {
+    width: 100vw;
+    text-align: center;
+}
+
 @keyframes drop {
     from {
        transform: translateY(0px);
