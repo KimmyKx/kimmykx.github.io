@@ -213,46 +213,9 @@ header a, .container li a {
     background-color: blueviolet;
     position: relative;
     width: 5px;
-    height: 120px;
+    /* height: 130px; */
     white-space: nowrap;
-}
-
-.container .history .content .dot span {
-    position: absolute;
-    top: -12px;
-    left: 15px;
-    color: gray;
-}
-
-.container .history .content .dot .inner {
-    white-space: normal;
-    flex-wrap: wrap;
-    width: 70vw;
-    position: relative;
-    top: 30px;
-    left: 40px;
-    padding: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px 0 grey;
-    max-width: 500px;
-}
-
-.container .history .content .dot .inner::after {
-    content: '';
-    position: absolute;
-    border: 20px solid transparent;
-    border-bottom-color: white;
-    top: -40px;
-    left: 20px;
-}
-
-.container .history .content .dot .inner::before {
-    content: '';
-    position: absolute;
-    border: 22px solid transparent;
-    border-bottom-color: rgba(200, 200, 200, .7);
-    top: -44px;
-    left: 18px;
+    border: 1px solid transparent;
 }
 
 .container .history .content .dot::after {
@@ -264,6 +227,95 @@ header a, .container li a {
     border-radius: 50%;
     top: -10px;
     left: -7px
+}
+
+
+.container .history .content .dot:nth-child(2)::before {
+    content: '';
+    background-color: blueviolet;
+    position: absolute;
+    height: 6px;
+    width: 75vw;
+    bottom: -1px;
+    max-width: 500px;
+}
+
+.container .history .right {
+    width: 75vw;
+    max-width: 500px;
+    position: relative;
+    display: flex;
+}
+
+.container .history .content .right .dot {
+    left: 100%;
+    top: -3px;
+    /* height: 140px; */
+    
+}
+
+.container .history .content .right .inner {
+    position: relative;
+    height: fit-content;
+    margin-left: -45px;
+    max-width: 470px;
+    margin-top: 20px;
+}
+
+
+.container .history .content span {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    color: gray;
+}
+
+.container .history .content .inner {
+    white-space: normal;
+    flex-wrap: wrap;
+    width: 70vw;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 grey;
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+
+.container .history .content .inner::after {
+    content: '';
+    position: absolute;
+    border: 20px solid transparent;
+    border-bottom-color: white;
+    top: -40px;
+    left: 20px;
+}
+
+.container .history .content .inner::before {
+    content: '';
+    position: absolute;
+    border: 22px solid transparent;
+    border-bottom-color: rgba(200, 200, 200, .7);
+    top: -44px;
+    left: 18px;
+}
+
+.container .history .content .right .inner::after {
+    left: unset;
+    right: 20px;
+}
+
+.container .history .content .right .inner::before {
+    left: unset;
+    right: 18px;
+}
+
+.container .history .content .right span {
+    left: unset;
+    right: 20px;
+    top: 6px;
 }
 
 @keyframes drop {
