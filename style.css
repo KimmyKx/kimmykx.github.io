@@ -1,18 +1,10 @@
 html { scroll-behavior: smooth;}
-
-@font-face {
-    font-family: "CenturyNew";
-    src: url(icon/Century_Gothic.woff) format("woff");
-}
-
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', "CenturyNew", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-
 
 body::-webkit-scrollbar {
     appearance: none;
@@ -178,6 +170,16 @@ header a, .container li a {
 .container .project .content .logo i {
     position: relative;
     font-size: 50px;
+}
+
+.container .project .content .tier:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 11px solid transparent;
+    transform: rotate(45deg);
+    border-top-color: black;
 }
 
 .container .project .content .tier:nth-child(2) .logo::before {
