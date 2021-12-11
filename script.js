@@ -11,13 +11,6 @@ function shuffle() {
     if(counter == 9) NAME.style.transform = 'translate(70px, 0px)'
     if(counter == 8) NAME.style.transform = 'translate(-70px, 0px)'
     const name = "Kimmy"
-    // let shuffled = ""
-    // for (let i = 0; i < name.length; i++) {
-    //     const ran = Math.floor(Math.random() * (name.length - 0)  + 0);
-    //     if(shuffled.includes(name.charAt(ran)) && name.charAt(ran) != 'm') i--
-    //     else shuffled += name.charAt(ran)
-    // }
-    // NAME.innerHTML = '<span style="color: blueviolet;">'+ shuffled.substring(0,3) +'</span>'+ shuffled.substring(3,5)
     let shuffled = name.split("")
     const n = shuffled.length
     for (let i = n - 1; i > 0; i--) {
