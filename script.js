@@ -1,4 +1,7 @@
 let counter = 0
+let isDark = 0;
+if(!!localStorage.getItem("mode")) dark()
+else isDark = 1
 shuffle()
 
 function shuffle() {
@@ -39,3 +42,68 @@ icons.forEach(el => {
     const colors = el.style.color
     el.style.textShadow = `0 0 3px ${colors}`
 })
+
+const darkmode = document.querySelector("darkmode")
+darkmode.addEventListener("click", toggleMode)
+
+function toggleMode(){
+    if(isDark % 2 == 0) light()
+    else dark()
+}
+
+function dark(){
+    localStorage.setItem("mode", "dark")
+    const colors = {
+        color: "white",
+        backgroundColor: "rgb(50,50,50)", 
+        header: "rgb(40,40,40)",
+        drop: "white",
+        boxShadow: "0 0 5px 0 black"
+    }
+    changes(colors)
+    isDark = 0
+}
+
+function light(){
+    localStorage.removeItem("mode")
+    const colors = {
+        color: "inherit",
+        backgroundColor: "white", 
+        header: "inherit",
+        drop: "black",
+        boxShadow: "0 0 5px 0 grey",
+        remove: true
+    }
+    changes(0, colors)
+    isDark = 1
+}
+
+function changes(dark, white){
+    document.body.style.color = `${white?.color || dark.color}`
+    document.body.style.backgroundColor = `${white?.backgroundColor || dark.backgroundColor}`
+    document.querySelector("header").style.backgroundColor = `${white?.header || dark.header}`
+    document.querySelector(".drop").style.borderTopColor = `${white?.drop || dark.drop}`
+    document.querySelectorAll(".project .tier").forEach(tier => tier.style.boxShadow = `${white?.boxShadow || dark.boxShadow}`)
+    document.querySelectorAll(".project .logo").forEach(logo => {
+        logo.style.backgroundColor= `${white?.backgroundColor || dark.backgroundColor}`
+        logo.style.boxShadow = `${white?.boxShadow || dark.boxShadow}`
+    })
+
+    white?.remove ? document.getElementById("styles").remove() :
+    document.head.innerHTML += `
+    <style id="styles">
+    .container .history .content .inner::after {
+        border-bottom-color: ${dark.backgroundColor};
+    }
+    .container .history .content .inner::before {
+        border-bottom-color: rgba(0,0,0,.5);
+    }
+    .container .history .content .inner {
+        box-shadow: ${dark.boxShadow}
+    }
+
+    </style>
+    `
+
+    document.querySelectorAll('.logo').forEach(logo => logo.style.boxShadow = `${white?.boxShadow || dark.boxShadow}`)
+}
