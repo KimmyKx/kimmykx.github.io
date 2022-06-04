@@ -46,23 +46,34 @@ icons.forEach(el => {
 const darkmode = document.querySelector("darkmode")
 darkmode.addEventListener("click", toggleMode)
 
+
 function toggleMode(){
-    if(isDark % 2 == 0) light()
-    else dark()
+    if(isDark % 2 == 0) {
+        light()
+        this.style.backgroundColor = 'black'
+        this.firstElementChild.style.color = 'white'
+    }
+    else {
+        dark()
+        this.style.backgroundColor = 'white'
+        this.firstElementChild.style.color = 'black'
+    }
 }
 
-function dark(){
+function dark() {
     localStorage.setItem("mode", "dark")
     const colors = {
         color: "white",
         backgroundColor: "rgb(50,50,50)", 
         header: "rgb(40,40,40)",
         drop: "white",
-        boxShadow: "0 0 5px 0 black"
+        boxShadow: "0 0 5px 0 black",
+        unityImage: 'img/unitylogo3.png'
     }
     changes(colors)
     isDark = 0
 }
+
 
 function light(){
     localStorage.removeItem("mode")
@@ -72,7 +83,8 @@ function light(){
         header: "inherit",
         drop: "black",
         boxShadow: "0 0 5px 0 grey",
-        remove: true
+        remove: true,
+        unityImage: 'img/unitylogo1.png'
     }
     changes(0, colors)
     isDark = 1
@@ -88,6 +100,8 @@ function changes(dark, white){
         logo.style.backgroundColor= `${white?.backgroundColor || dark.backgroundColor}`
         logo.style.boxShadow = `${white?.boxShadow || dark.boxShadow}`
     })
+
+    document.querySelector('img#darkable').src = white?.unityImage || dark.unityImage
 
     white?.remove ? document.getElementById("styles").remove() :
     document.head.innerHTML += `
