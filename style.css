@@ -276,13 +276,23 @@ darkmode .fa-moon {
 }
 
 
-.container .history .content .dot:nth-child(2)::before {
+.container .history .content .dot:nth-child(even)::before {
     content: '';
     background-color: blueviolet;
     position: absolute;
     height: 6px;
     width: 75vw;
     bottom: -1px;
+    max-width: 500px;
+}
+
+.container .history .content .right:nth-child(even)::before {
+    content: '';
+    background-color: blueviolet;
+    position: absolute;
+    height: 6px;
+    width: 76vw;
+    bottom: 0px;
     max-width: 500px;
 }
 
@@ -304,13 +314,12 @@ darkmode .fa-moon {
     height: fit-content;
     margin-left: -45px;
     max-width: 470px;
-    margin-top: 20px;
 }
 
 
 .container .history .content span {
     position: absolute;
-    top: -12px;
+    top: 0px;
     left: 15px;
     color: gray;
 }
@@ -323,6 +332,7 @@ darkmode .fa-moon {
     top: 30px;
     left: 40px;
     padding: 10px;
+    margin-top: 20px;
     box-sizing: border-box;
     box-shadow: 0 0 5px 0 grey;
     max-width: 500px;
@@ -361,10 +371,6 @@ darkmode .fa-moon {
     left: unset;
     right: 20px;
     top: 6px;
-}
-
-.container .history .content .right:nth-child(even) span{
-    top: -10px;
 }
 
 .container .skill {
