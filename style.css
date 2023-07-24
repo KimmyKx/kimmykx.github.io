@@ -208,17 +208,17 @@ darkmode .fa-moon {
     font-size: 50px;
 }
 
-.container .project .content .tier:nth-child(2)::after {
+.container .project .content .tier:nth-child(3)::after {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1px;
+    left: -2px;
     border: 11px solid transparent;
     transform: rotate(45deg);
     border-top-color: black;
 }
 
-.container .project .content .tier:nth-child(2) .logo::before {
+.container .project .content .tier:nth-child(3) .logo::before {
     content: '';
     position: absolute;
     width: 5px;
@@ -229,7 +229,7 @@ darkmode .fa-moon {
     z-index: 9;
 }
 
-.container .project .content .tier:nth-child(2) .logo::after {
+.container .project .content .tier:nth-child(3) .logo::after {
     content: '';
     position: absolute;
     border: 10px solid transparent;
