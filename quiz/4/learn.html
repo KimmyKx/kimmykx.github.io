@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn 186</title>
+    <link rel="stylesheet" href="../../learnstyle.css">
+</head>
+<body>
+    <nav>
+        <a href="quiz.html">Back</a>
+        <div>
+            <input type="checkbox" id="pinyinCheck" checked="true">
+            <label for="pinyinCheck">Pinyin</label>
+        </div>
+        <div>
+            <input type="checkbox" id="meaningCheck" checked="true">
+            <label for="meaningCheck">Meaning</label>
+        </div>
+    </nav>
+    <div class="container"></div>
+<script>
+    const gStr = "力，內，巴，斤，木，毛，父，牙，卡，必，母，玉，田，石，光，向，收，次，米，羊，伯，吵，址，完，局，李，豆，其，拍，林，河，泳，物，表，金，青，屋，故，原，租，草，記，停，處，許，貨，通，雪，喂，換，景，游，發，結，華，著／着，街，詞，越，週，郵，陽，搬，爺，節，該，境，滿，算，燈，糖，親"
+    const pStr = "Lì, nèi, bā, jīn, mù, máo, fù, yá, kǎ, bì, mǔ, yù, tián, shí, guāng, xiàng, shōu, cì, mǐ, yáng, bó, chǎo, zhǐ, wán, jú, lǐ, dòu, qí, pāi, lín, hé, yǒng, wù, biǎo, jīn, qīng, wū, gù, yuán, zū, cǎo, jì, tíng, chù, xǔ, huò, tōng, xuě, wèi, huàn, jǐng, yóu, fā, jié, huá, zhe/zhe, jiē, cí, yuè, zhōu, yóu, yáng, bān, yé, jié, gāi, jìng, mǎn, suàn, dēng, táng, qīn".toLowerCase()
+    const mStr = "force, inside, -bar (particle), catty, wood, hair, father, tooth, card, must, Mother, Jade, Field, Stone, Light, Towards, Collection, Times, Rice, Sheep, Uncle, Noisy, Address, Finish, Bureau, plum, bean, its, shoot, forest, river, swimming, thing, table, gold, green, house, so, original, rent, grass, remember, stop, place, May, goods, pass, snow, feed, change, scene, travel, hair, knot, magnificent, with, Street, word, cross, week, mail, Positive, Move, Lord, Festival, Should, territory, Full, Calculate, lamp, Sugar, Kiss".toLocaleLowerCase()
+
+    const goresans = gStr.split("，")
+    const pinyins = pStr.split(", ")
+    const means = mStr.split(", ")
+
+    const container = document.querySelector(".container")
+
+    const pinyinCheck = document.querySelector("#pinyinCheck")
+    const meaningCheck = document.querySelector("#meaningCheck")
+
+    goresans.forEach((goresan, i) => {
+        
+        const el = `
+        <div class="item">
+            <div class="goresan">
+                ${goresan}
+            </div>
+            <div class="pinyin">
+                ${pinyins[i]}
+            </div>
+            <div class="meaning">
+                ${means[i]}
+            </div>
+        </div>
+        `
+        container.innerHTML += el
+    })
+
+    pinyinCheck.onchange = () => {
+        const state = pinyinCheck.checked
+        const pinyins = container.querySelectorAll(".pinyin")
+        pinyins.forEach(pin => {
+            pin.style.display = state ? "block" : "none"
+        })
+    }
+    meaningCheck.onchange = () => {
+        const state = meaningCheck.checked
+        const meanings = container.querySelectorAll(".meaning")
+        meanings.forEach(mean => {
+            mean.style.display = state ? "block" : "none"
+        })
+    }
+</script>
+</body>
+</html>
