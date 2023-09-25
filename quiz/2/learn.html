@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn 163</title>
+    <link rel="stylesheet" href="../../learnstyle.css">
+</head>
+<body>
+    <nav>
+        <a href="quiz.html">Back</a>
+        <div>
+            <input type="checkbox" id="pinyinCheck" checked="true">
+            <label for="pinyinCheck">Pinyin</label>
+        </div>
+        <div>
+            <input type="checkbox" id="meaningCheck" checked="true">
+            <label for="meaningCheck">Meaning</label>
+        </div>
+    </nav>
+    <div class="container"></div>
+<script>
+    const gStr = "又，口，山，己，公，心，文，方，比，火，牛，王，出，包，句，只，右，奶，它，左，白，件，休，共，因，在，地，自，衣，住，別，每，男，那，事，些，店，念，房，所，服，杯，果，枝，玩，空，花，長，門，雨，非，室，為，紅，面，風，飛，息，氣，真／眞，馬，唸，夠，常，張，得，從，教，這，就，最，短，開，黑，塊，會，跟，過，樂，樣，頭，還，鐘"
+    const pStr = "Yòu, kǒu, shān, jǐ, gōng, xīn, wén, fāng, bǐ, huǒ, niú, wáng, chū, bāo, jù, zhǐ, yòu, nǎi, tā, zuǒ, bái, jiàn, xiū, gòng, yīn, zài, de/dì, zì, yī, zhù, bié, měi, nán, nà, shì, xiē, diàn, niàn, fáng, suǒ, fú, bēi, guǒ, zhī, wán, kōng, huā, zhǎng/cháng, mén, yǔ, fēi, shì, wèi, hóng, miàn, fēng, fēi, xí, qì, zhēn/zhēn, mǎ, niàn, gòu, cháng, zhāng, dé, cóng, jiào, zhè, jiù, zuì, duǎn, kāi, hēi, kuài, huì, gēn, guò, lè/yuè, yàng, tóu, hái, zhōng"
+    const mStr = "also/again, mouth, mountain, self, public, heart, text/language, square, compare, fire, cow, king, out, bag, sentence, only, right, milk, it, left, white, piece(unit), rest, common, cause, In, ground, self, clothing, live, don't/other, every, male, that, things, several/some, shop, think/idea, room, place, clothing, cup, fruit, branch/unit, play, empty/sky, flower, long, door, rain, Non, room, for, red, surface, wind, fly, breath, gas, serious/really, horse, read, enough, often, open, get, from, teach, this, just, most, short, open, black, block(unit), able, with/and, pass, happy/song, like, head, still, bell/hour"
+
+    const goresans = gStr.split("，")
+    const pinyins = pStr.split(", ")
+    const means = mStr.split(", ")
+
+    const container = document.querySelector(".container")
+
+    const pinyinCheck = document.querySelector("#pinyinCheck")
+    const meaningCheck = document.querySelector("#meaningCheck")
+
+    goresans.forEach((goresan, i) => {
+        
+        const el = `
+        <div class="item">
+            <div class="goresan">
+                ${goresan}
+            </div>
+            <div class="pinyin">
+                ${pinyins[i]}
+            </div>
+            <div class="meaning">
+                ${means[i]}
+            </div>
+        </div>
+        `
+        container.innerHTML += el
+    })
+
+    pinyinCheck.onchange = () => {
+        const state = pinyinCheck.checked
+        const pinyins = container.querySelectorAll(".pinyin")
+        pinyins.forEach(pin => {
+            pin.style.display = state ? "block" : "none"
+        })
+    }
+    meaningCheck.onchange = () => {
+        const state = meaningCheck.checked
+        const meanings = container.querySelectorAll(".meaning")
+        meanings.forEach(mean => {
+            mean.style.display = state ? "block" : "none"
+        })
+    }
+</script>
+</body>
+</html>
